@@ -7,8 +7,9 @@ import Noticia from "./Noticia";
 
 
 const ListadoNoticias = () => {
-    const {noticias} = useNoticias()
-    console.log(noticias)
+    const {noticias, totalNoticias} = useNoticias()
+    const totalPaginas = Math.ceil(totalNoticias /20)
+    console.log(totalPaginas)
   return (
     <>
     <Typography
@@ -40,7 +41,7 @@ const ListadoNoticias = () => {
     alignItems="center"
     >
 
-    <Pagination count={3} color="primary" />
+    <Pagination count={totalPaginas} color="primary" />
 
     </Stack>
     </>
