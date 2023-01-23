@@ -9,14 +9,13 @@ import Noticia from "./Noticia";
 const ListadoNoticias = () => {
     const {noticias, totalNoticias, handleChangePagina, pagina} = useNoticias()
     const totalPaginas = Math.ceil(totalNoticias /20)
-    console.log(totalPaginas)
     
   return (
     <>
     <Typography
     textAlign={"center"}
     marginY={5}
-    variant="h3"
+    variant={"h3"}
     component={"h2"}
     >
         Últimas Noticias
@@ -38,13 +37,13 @@ const ListadoNoticias = () => {
     }}
     spacing={2}
     direction={"row"}
-    justifyContent="center"
-    alignItems="center"
+    justifyContent={"center"}
+    alignItems={"center"}
     >
 
     <Pagination 
     count={totalPaginas} 
-    color="primary" 
+    color={"primary" }
     onChange={handleChangePagina}
     page={pagina}
     />
