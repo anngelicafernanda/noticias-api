@@ -9,11 +9,15 @@ function App() {
     <NoticiasProvider>
     <Container>
       <header>
+      <Typography color={"secondary"} align='center' marginY={5} component="h1" variant='h5'>Para visualizar este proyecto debes clonarlo e instalar sus dependencias,
+        debido a que se utilizo una API gratuita que no permite
+        realizar consultas en producción, solo de forma local.
+      </Typography>
         <Typography align='center' marginY={5} component="h1" variant='h3'>
           Buscador de Noticias
         </Typography>
       </header>
-
+      
       <Grid
       container
       direction="row"
