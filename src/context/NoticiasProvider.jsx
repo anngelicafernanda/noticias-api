@@ -17,6 +17,7 @@ const NoticiasProvider = ({children}) => {
 
         setNoticias(data.articles)
         setTotalNoticias(data.totalResults)
+        setPagina(1)
     }
     consultarAPI()
     }, [categoria])
@@ -24,13 +25,13 @@ const NoticiasProvider = ({children}) => {
 
     useEffect(() => {
         const consultarAPI = async () => {
-            const url = `https://newsapi.org/v2/top-headlines?country=ve&page=${pagina}category=${categoria}&apiKey=${import.meta.env.VITE_API_KEY}`
+            const url = `https://newsapi.org/v2/top-headlines?country=ve&page=${pagina}&category=${categoria}&apiKey=${import.meta.env.VITE_API_KEY}`
              
             const {data} = await axios(url)
     
             setNoticias(data.articles)
             setTotalNoticias(data.totalResults)
-            setPagina(1)
+            
         }
         consultarAPI()
         }, [pagina])
